@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.canister.med_manager">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SignInActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".AddMedicineActivity"
+            android:label="@string/action_add_medicine"
+            android:parentActivityName=".DisplayMedicineActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayMedicineActivity" />
+        </activity>
+        <activity
+            android:name=".DisplayMedicineActivity"
+            android:label="@string/medicine_activity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".DisplayMedicineDetailsActivity"
+            android:label="@string/medicine_details_activity"
+            android:parentActivityName=".DisplayMedicineActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayMedicineActivity" />
+        </activity>
+
+        <provider
+            android:name=".database.MedicineContentProvider"
+            android:authorities="com.example.canister.med_manager"
+            android:exported="true" />
+
+        <activity
+            android:name=".userdata.ProfileActivity"
+            android:label="@string/profile_activity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".DisplayMedicineActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayMedicineActivity" />
+        </activity>
+        <activity android:name=".MedicationIntakeActivity" />
+
+        <service
+            android:name=".reminder.MedicineReminderIntentService"
+            android:exported="false" />
+        <service
+            android:name=".reminder.MedicineReminderFirebaseJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobDisplatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".userdata.EditProfileNameActivity"
+            android:label="EditProfileName"
+            android:parentActivityName=".userdata.ProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".userdata.ProfileActivity" />
+        </activity>
+        <activity android:name=".userdata.EditEmailActivity"
+            android:label="EditProfileName"
+            android:parentActivityName=".userdata.ProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".userdata.ProfileActivity" />
+        </activity>
+    </application>
+
+</manifest>

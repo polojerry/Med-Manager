@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:contentDescription="@string/description_background_image"
+        android:id="@+id/image_background"
+        android:src="@drawable/image_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/text_medicine_name_label"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:width="100dp"
+        android:text="@string/name_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="30dp" />
+
+    <EditText
+        android:id="@+id/edit_medicine_name"
+        android:layout_width="325dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="30dp"
+        android:width="180dp"
+        android:inputType="textCapSentences"
+        app:layout_constraintBottom_toBottomOf="@+id/text_medicine_name_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_medicine_name_label"
+        android:layout_marginRight="30dp" />
+
+    <TextView
+        android:id="@+id/text_medicine_description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/description_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/text_medicine_name_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_medicine_name_label" />
+
+    <EditText
+        android:id="@+id/edit_medicine_description"
+        android:layout_width="325dp"
+        android:layout_height="66dp"
+        android:width="200dp"
+        android:inputType="textCapSentences"
+        app:layout_constraintBottom_toBottomOf="@+id/text_medicine_description_label"
+        app:layout_constraintEnd_toEndOf="@+id/edit_medicine_name" />
+
+    <TextView
+        android:id="@+id/text_medicine_frequency_label"
+        android:layout_width="320dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:width="150dp"
+        android:text="@string/frequency_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/text_medicine_description_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_medicine_description_label" />
+
+    <EditText
+        android:id="@+id/edit_medicine_frequency"
+        android:layout_width="320dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="30dp"
+        android:width="20dp"
+        android:hint="@string/frequency_hint"
+        android:inputType="number"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_medicine_frequency_label"
+        app:layout_constraintEnd_toEndOf="@+id/edit_medicine_description"
+        app:layout_constraintTop_toBottomOf="@+id/text_medicine_description_label" />
+
+    <TextView
+        android:id="@+id/text_medicine_start_date_label"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:width="150dp"
+        android:text="@string/start_date_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/text_medicine_frequency_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_medicine_frequency_label" />
+
+    <TextView
+        android:id="@+id/text_medicine_start_date"
+        android:layout_width="319dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="30dp"
+        android:width="200dp"
+        android:clickable="true"
+        android:hint="@string/date_format"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_medicine_start_date_label"
+        app:layout_constraintEnd_toEndOf="@+id/edit_medicine_frequency"
+        app:layout_constraintTop_toBottomOf="@+id/edit_medicine_frequency"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/text_medicine_end_date_label"
+        android:layout_width="223dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="30dp"
+        android:width="150dp"
+        android:text="@string/end_date_label"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/text_medicine_start_date_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_medicine_start_date_label" />
+
+    <TextView
+        android:id="@+id/text_medicine_end_date"
+        android:layout_width="317dp"
+        android:layout_height="64dp"
+        android:clickable="true"
+        android:hint="@string/date_format"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_medicine_end_date_label"
+        app:layout_constraintEnd_toEndOf="@+id/text_medicine_start_date"
+        android:focusable="true" />
+
+</android.support.constraint.ConstraintLayout>

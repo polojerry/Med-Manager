@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:contentDescription="@string/description_background_image"
+        android:id="@+id/image_background"
+        android:src="@drawable/image_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="357dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="@dimen/min_marging"
+        android:layout_marginStart="@dimen/min_marging"
+        android:src="@drawable/image_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/company_logo_description" />
+
+    <EditText
+        android:id="@+id/edit_emailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+
+    <EditText
+        android:id="@+id/edit_passwordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_emailLogin" />
+
+    <Button
+        android:id="@+id/button_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:background="#56ccf2"
+        android:text="@string/action_login"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_passwordLogin" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/button_googleSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_Login"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/min_marging"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_Login"
+        android:layout_marginLeft="@dimen/layout_margin" />
+
+    <Button
+        android:id="@+id/button_SignUpLoginScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/min_marging"
+        android:layout_marginTop="@dimen/min_marging"
+        android:background="#56ccf2"
+        android:text="@string/action_signup"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/button_googleSignIn"
+        app:layout_constraintEnd_toEndOf="@+id/button_Login"
+        app:layout_constraintTop_toTopOf="@+id/button_googleSignIn" />
+</android.support.constraint.ConstraintLayout>
+
+</ScrollView>
